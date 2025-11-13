@@ -88,7 +88,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p className="copyright">
-            © 2024 NOMOPIX. Made with <FaHeart className="heart-icon" /> by NOMOPIX Team
+            © 2026 NOMOPIX. Made with <FaHeart className="heart-icon" /> by NOMOPIX Team
           </p>
           <div className="footer-links-bottom">
             <Link to="/signup">Sign Up</Link>

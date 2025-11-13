@@ -404,6 +404,6 @@ This project is proprietary software owned by NOMOPIX Designs.
 
 <div align="center">
   <p>Made with ❤️ by NOMOPIX Team</p>
-  <p>© 2024 NOMOPIX. All rights reserved.</p>
+  <p>© 2026 NOMOPIX. All rights reserved.</p>
 </div>
 
