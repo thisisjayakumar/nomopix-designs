@@ -56,7 +56,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="contact-section" id="contact">
+    <section className="contact-section" id="contact" aria-label="Contact us" itemScope itemType="https://schema.org/ContactPage">
       <div className="container">
         <motion.div
           ref={ref}
@@ -136,7 +136,7 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="contact-form-wrapper"
           >
-            <form onSubmit={handleSubmit} className="contact-form">
+            <form onSubmit={handleSubmit} className="contact-form" aria-label="Contact form">
               <div className="form-group">
                 <label htmlFor="name">Your Name</label>
                 <input
@@ -147,6 +147,8 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="Enter your full name"
                   required
+                  aria-required="true"
+                  autoComplete="name"
                 />
               </div>
 
@@ -160,6 +162,8 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="your.email@example.com"
                   required
+                  aria-required="true"
+                  autoComplete="email"
                 />
               </div>
 
@@ -173,10 +177,16 @@ export default function Contact() {
                   placeholder="Tell us about your project..."
                   rows="6"
                   required
+                  aria-required="true"
                 ></textarea>
               </div>
 
-              <button type="submit" className="submit-btn" disabled={loading}>
+              <button 
+                type="submit" 
+                className="submit-btn" 
+                disabled={loading}
+                aria-label={loading ? "Sending message..." : "Send message"}
+              >
                 {loading ? (
                   <>
                     <div className="loading-spinner"></div>

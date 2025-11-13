@@ -47,7 +47,7 @@ export default function Services() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section className="services-section" id="services">
+    <section className="services-section" id="services" aria-label="Our professional services" itemScope itemType="https://schema.org/Service">
       <div className="container">
         <motion.div
           ref={ref}
@@ -73,11 +73,13 @@ export default function Services() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="service-card"
               whileHover={{ y: -10 }}
+              role="article"
+              aria-label={`${service.title} service`}
             >
-              <div className="service-icon" style={{ color: service.color }}>
+              <div className="service-icon" style={{ color: service.color }} aria-hidden="true">
                 {service.icon}
               </div>
-              <h3 className="service-title">{service.title}</h3>
+              <h3 className="service-title" itemProp="name">{service.title}</h3>
               <p className="service-description">{service.description}</p>
               <div className="service-glow" style={{ background: `radial-gradient(circle, ${service.color}20, transparent)` }}></div>
             </motion.div>

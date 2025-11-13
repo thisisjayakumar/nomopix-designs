@@ -33,19 +33,19 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} role="navigation" aria-label="Main navigation">
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
+        <Link to="/" className="navbar-logo" aria-label="NOMOPIX Designs - Go to homepage">
           <span className="logo-text">NOMOPIX</span>
           <span className="logo-subtitle">Designs</span>
         </Link>
 
-        <div className={`navbar-menu ${mobileMenuOpen ? 'active' : ''}`}>
-          <button onClick={() => scrollToSection('home')} className="nav-link">Home</button>
-          <button onClick={() => scrollToSection('services')} className="nav-link">Services</button>
-          <button onClick={() => scrollToSection('work')} className="nav-link">Portfolio</button>
-          <button onClick={() => scrollToSection('testimonials')} className="nav-link">Testimonials</button>
-          <button onClick={() => scrollToSection('contact')} className="nav-link">Contact</button>
+        <div className={`navbar-menu ${mobileMenuOpen ? 'active' : ''}`} role="menu">
+          <button onClick={() => scrollToSection('home')} className="nav-link" aria-label="Navigate to home section">Home</button>
+          <button onClick={() => scrollToSection('services')} className="nav-link" aria-label="Navigate to services section">Services</button>
+          <button onClick={() => scrollToSection('work')} className="nav-link" aria-label="Navigate to portfolio section">Portfolio</button>
+          <button onClick={() => scrollToSection('testimonials')} className="nav-link" aria-label="Navigate to testimonials section">Testimonials</button>
+          <button onClick={() => scrollToSection('contact')} className="nav-link" aria-label="Navigate to contact section">Contact</button>
 
           {user ? (
             <>
@@ -66,8 +66,14 @@ export default function Navbar() {
           )}
         </div>
 
-        <button className="mobile-menu-icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-          {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+        <button 
+          className="mobile-menu-icon" 
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? "Close mobile menu" : "Open mobile menu"}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="navbar-menu"
+        >
+          {mobileMenuOpen ? <FaTimes aria-hidden="true" /> : <FaBars aria-hidden="true" />}
         </button>
       </div>
     </nav>

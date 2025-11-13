@@ -14,10 +14,10 @@ export default function Hero() {
   };
 
   return (
-    <section className="hero-section" id="home">
+    <section className="hero-section" id="home" aria-label="Hero section with main offer">
       <Scene3D />
       
-      <div className="hero-content">
+      <div className="hero-content" role="main">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -33,6 +33,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="hero-title"
+          itemProp="headline"
         >
           <span className="title-line">Stunning Websites</span>
           <span className="title-line gradient-text">Starting at Just</span>
@@ -59,13 +60,21 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="hero-cta"
         >
-          <button onClick={handleWhatsAppClick} className="cta-button primary">
-            <FaWhatsapp className="btn-icon" />
+          <button 
+            onClick={handleWhatsAppClick} 
+            className="cta-button primary"
+            aria-label="Contact us via WhatsApp for website offer"
+          >
+            <FaWhatsapp className="btn-icon" aria-hidden="true" />
             Get Started on WhatsApp
           </button>
           
-          <Link to="/signup" className="cta-button secondary">
-            Create Account <FaArrowRight className="btn-icon" />
+          <Link 
+            to="/signup" 
+            className="cta-button secondary"
+            aria-label="Create your NOMOPIX account"
+          >
+            Create Account <FaArrowRight className="btn-icon" aria-hidden="true" />
           </Link>
         </motion.div>
 

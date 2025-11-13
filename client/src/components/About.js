@@ -7,8 +7,8 @@ export default function About() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section className="about-section" id="about">
-      <div className="container">
+    <section className="about-section" id="about" aria-label="About NOMOPIX Digital Studio">
+      <div className="container" itemScope itemType="https://schema.org/AboutPage">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}

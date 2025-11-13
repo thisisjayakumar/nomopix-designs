@@ -1,0 +1,55 @@
+# Netlify Headers Configuration for NOMOPIX Designs
+# Security and Performance Headers
+
+/*
+  # Security Headers
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  
+  # HSTS (HTTP Strict Transport Security) - Force HTTPS
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  
+  # Content Security Policy (CSP)
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://wa.me https://*.google-analytics.com; frame-ancestors 'self';
+
+# Cache Control for Static Assets
+/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache Control for Images
+*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+*.png
+  Cache-Control: public, max-age=31536000, immutable
+*.gif
+  Cache-Control: public, max-age=31536000, immutable
+*.webp
+  Cache-Control: public, max-age=31536000, immutable
+*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache Control for CSS and JS
+*.css
+  Cache-Control: public, max-age=2592000
+*.js
+  Cache-Control: public, max-age=2592000
+
+# Cache Control for Fonts
+*.woff
+  Cache-Control: public, max-age=31536000, immutable
+*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+# No Cache for HTML
+/*.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# Service Worker
+/service-worker.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
