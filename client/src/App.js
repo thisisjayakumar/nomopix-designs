@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import axios from 'axios';
+import config from './config';
 import './App.css';
+
+// Configure axios base URL for API calls
+axios.defaults.baseURL = config.apiUrl;
 
 // Pages
 import HomePage from './pages/HomePage';
