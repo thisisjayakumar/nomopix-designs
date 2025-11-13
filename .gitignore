@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+client/node_modules/
+
+# Production
+client/build/
+
+# Environment
+.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+.DS_Store?
+
+# IDE
+.vscode/
+.idea/
+
+# Testing
+coverage/
+
